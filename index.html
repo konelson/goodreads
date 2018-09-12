@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dewey</title>
+    <style>
+    {
+    font-family: arial, sans-serif;
+    }
+    </style>
+  </head>
+  <body>
+    <center>
+    <img style="height:50px;" src="https://s.gr-assets.com/assets/press/logo-fe2ef7d630d5f23daf46230e8592cd99.png">
+
+    <h1> Welcome to Dewey! </h1>
+    <h1> A goodreads Book Recommender</h1>
+    
+    <h3> Enter User ID</h3>
+  
+  <form action="/recommend_book" method="post">
+
+    <input style="height:25px;font-size:14pt;" type="text" name="User ID"></input>
+    <!-- Variable entry called BookTitle -->
+    <button style="height:20px;font-size:8pt;"id="button" onclick="getRecs()">Submit</button>
+  </form>
+        <h1><div id="yours"> </div></h1>
+        <br>
+        <h2> Reading List: <div id="output"></div></h2>
+        <br>
+        <img src="https://images.gr-assets.com/books/1395582745l/18710190.jpg"style="width: 10%;height: 10%">
+        <h4><a href="url" id="link2">  </a>
+        <br>
+        <br>
+        <br>
+        <a href="url" id="link3"> </a>
+
+        {% if message %}
+        <h2>{{message}}</h2>
+        {% endif %}
+  
+  </body>
+</html>
+
+
+
