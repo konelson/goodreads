@@ -1,6 +1,10 @@
 from flask import Flask, request, render_template
-import book_flask.py
-rec_func #Import python file that runs recommender function
+import pickle
+with open('rec_dict.pickle','rb') as read_file:
+    rec_dict = pickle.load(read_file)
+
+#from book_flask import *
+#rec_func #Import python file that runs recommender function
 
 # create a flask object
 app = Flask(__name__)
@@ -8,11 +12,16 @@ app = Flask(__name__)
 # creates an association between the / page and the entry_page function (defaults to GET)
 @app.route('/')
 def entry_page():
-    return render_template('index.html')
+	return render_template('index.html')#, test=rec_dict)
+'''
+    {% for t, v in test.items() %}
+      <li><img src={{v[4]}} /></li>
+    {% endfor %}
+'''
 
 # creates an association between the /recommend_book page and the render_message function
 # (includes POST requests which allow users to enter in data via form)
-@app.route('/recommend_book/', methods=['GET', 'POST'])
+@app.route('/recommend_book', methods=['GET', 'POST'])
 def render_message():
 
 	# user-input
@@ -26,7 +35,7 @@ def render_message():
     
     # takes user input and ensures it can be turned into a floats 
     # doing error check to make sure entered info is a float
-    
+    '''
     for i, num in enumerate(user_id):
         user_input = request.form[num]
         float_input = user_input
@@ -35,13 +44,15 @@ def render_message():
             user_number.append(float_input)
         except:
             return render_template('index.html', message=messages[i])
-        print('amounts', amounts)
         #user_number.append(float_input)
     
     # show user final message
 
-    recs = rec_func(user_number) #Returns a dictionary - use to lookup in index.html
-    return render_template('index.html', message=recs)
+    #recs = rec_func(user_number) #Returns a dictionary - use to lookup in index.html
+    print(rec_dict)
+	'''
+    messages = ['hello', 'this', 'is', 'a', 'message']
+    return render_template('index.html', message=rec_dict)
 
 if __name__ == '__main__':
     app.run(debug=True)

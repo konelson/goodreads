@@ -23,23 +23,150 @@
     <!-- Variable entry called BookTitle -->
     <button style="height:20px;font-size:8pt;"id="button" onclick="getRecs()">Submit</button>
   </form>
-        <h1><div id="yours"> </div></h1>
+      <h1><div id="yours"> </div></h1>
+        <br>
+        {% if message %}
+
+
+        <h2>Last Book Read:</h2>
+        The Hunger Games  
+        <br>
+        <br>
+        <img src="https://images.gr-assets.com/books/1447303603l/2767052.jpg" style="width: 15%;height: 15%">
+        
         <br>
         <h2> Reading List: <div id="output"></div></h2>
-        <br>
-        <img src="https://images.gr-assets.com/books/1395582745l/18710190.jpg"style="width: 10%;height: 10%">
-        <h4><a href="url" id="link2">  </a>
-        <br>
-        <br>
-        <br>
-        <a href="url" id="link3"> </a>
 
-        {% if message %}
-        <h2>{{message}}</h2>
+        <img src="{{message[0][4]}}"style="width: 10%;height: 10%">
+        <br>
+        <br>
+        
+        <b>Title:</b>
+        {{message[0][1]}}
+        <br>
+        <b>Author:</b>
+        {{message[0][2]}}
+        
+        <br>
+        <b>Rating:</b>
+       {{message[0][3]}}
+         <br>
+
+        <br>
+        <b> 
+        {{message[0][5]}}
+        
+        </b>
+        <br>
+
+        <br>
+
+        <img src="{{message[1][4]}}"style="width: 10%;height: 10%">
+        <br>
+        <br>
+        
+        <b>Title:</b>
+        {{message[1][1]}}
+        <br>
+        <b>Author:</b>
+        {{message[1][2]}}
+        
+        <br>
+        <b>Rating:</b>
+       {{message[1][3]}}
+         <br>
+
+        <br>
+        <b> 
+        {{message[1][5]}}
+        
+        </b>
+        <br>
+
+        <br>
+
+        <img src="{{message[2][4]}}"style="width: 10%;height: 10%">
+        <br>
+        <br>
+        
+        <b>Title:</b>
+        {{message[2][1]}}
+        <br>
+        <b>Author:</b>
+        {{message[2][2]}}
+        
+        <br>
+        <b>Rating:</b>
+       {{message[2][3]}}
+         <br>
+
+        <br>
+        <b> 
+        {{message[2][5]}}
+        
+        </b>
+        <br>
+
+        <br>
+
+        <img src="{{message[3][4]}}"style="width: 10%;height: 10%">
+        <br>
+        <br>
+        
+        <b>Title:</b>
+        {{message[3][1]}}
+        <br>
+        <b>Author:</b>
+        {{message[3][2]}}
+        
+        <br>
+        <b>Rating:</b>
+       {{message[3][3]}}
+         <br>
+
+        <br>
+        <b> 
+        {{message[3][5]}}
+        
+        </b>
+        <br>
+
+        <br>
+
+        <img src="{{message[4][4]}}"style="width: 10%;height: 10%">
+        <br>
+        <br>
+        
+        <b>Title:</b>
+        {{message[4][1]}}
+        <br>
+        <b>Author:</b>
+        {{message[4][2]}}
+        
+        <br>
+        <b>Rating:</b>
+       {{message[4][3]}}
+         <br>
+
+        <br>
+        <b> 
+        {{message[4][5]}}
+        
+        </b>
+        <br>
+
+
+        <br>
+
+
+
+        <br>
+
         {% endif %}
   
   </body>
 </html>
 
+    
 
 
