@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+<html lang="en">
+  <head>
+    <title>Dewey</title>
+    <style>
+    * {
+    font-family: arial;
+    background-color: lightblue;
+    /*background-image: url("beverage-blank-break-997719.jpg");
+   */ }
+    p.b {
+    font-style: bold;
+    }
+    .centered {
+      text-align: center;
+    }
+    .indent {
+    text-indent: 50px;
+    }
+    </style>
+  </head>
+  <body>
+    <img style="height:75px;" src="https://s.gr-assets.com/assets/press/logo-fe2ef7d630d5f23daf46230e8592cd99.png">
+
+    <div class="centered"> 
+
+    <h1> Welcome to Dewey! </h1>
+    <!-- <h2> A goodreads Book Recommender</h2> -->
+    </div>
+    <br>
+
+    <!-- <img style="height:50px;" src="https://s.gr-assets.com/assets/press/logo-fe2ef7d630d5f23daf46230e8592cd99.png">
+ -->
+    <div class="indent">
+
+        <h3> Enter User ID</h3>
+      
+      <form action="/recommend_book" method="post">
+
+        <input style="height:25px;font-size:14pt;" type="text" name="User ID"></input>
+        <button style="height:25px;font-size:10pt;"id="button" onclick="getRecs()">Submit</button>
+      </form>
+
+        <!-- <h3>OR</h3>
+        <br>
+         -->
+         <h3> Enter Book Title</h3>
+      <form action="/recommend_bytitle" method="post">
+
+        <input style="width:750px;height:25px;font-size:14pt;" type="text" name="Title"></input>
+        <button style="height:25px;font-size:10pt;"id="button" onclick="getRecs()">Submit</button>
+      </form>
+    </div>
+     
+     
+
+      <h1><div id="yours"> </div></h1>
+        <br>
+        {% if message %}
+
+        <div class="centered">
+          <h2>Last Book Read:</h2>
+          <h4>The Hunger Games</h4> 
+        <br>
+        <img src="https://images.gr-assets.com/books/1447303603l/2767052.jpg" style="width: 15%;height: 15%">
+        </div> 
+        <br>
+        <br>
+        <div class="indent">
+          <h2>  Reading List: <div id="output"></div></h2>
+        </div>
+        <!-- <img src="{{message[0][4]}}"style="width: 10%;height: 10%"> -->
+        <br>
+        
+        {%for v in message.values()%}    
+        <div class="row">
+          <div class="two columns">
+          </div>
+          <div class="two columns">
+            <img src="{{v[4]}}" style="width: 100%;">
+          </div>
+          <div class="eight columns">
+            <h5>Title: {{v[1]}} </h5>
+            <h5>Author: {{v[2]}}</h5>
+            <h5>Rating: {{v[3]}}</h5>
+            <p>{{v[5]}}</p>
+          </div>
+         </div>
+        {% endfor %}
+
+        {% endif %}
+      
+     <h1><div id="yours2"> </div></h1>
+        {% if new_message %}
+        <div class="indent">
+          <h2> Reading List: <div id="output"></div></h2>
+        </div>
+<!--         <img src="{{new_message[0][4]}}"style="width: 10%;height: 10%"> 
+ -->        <br>
+        
+        {%for v in new_message.values()%}    
+        <div class="row">
+          <div class="two columns">
+          </div>
+          <div class="two columns">
+            <img src="{{v[4]}}" style="width: 100%;">
+          </div>
+          <div class="eight columns" >
+            <h5>Title: {{v[1]}}</h5>
+            <h5>Author: {{v[2]}}</h5>
+            <h5>Rating: {{v[3]}}</h5>
+            <p>{{v[5]}}</p>
+          </div>
+         </div>
+        {% endfor %}
+
+        {% endif %}
+
+
+  </body>
+</html>
+
+    
+
+
