@@ -15,4 +15,4 @@
 6.  goodreads_scraper.py
     - webscrapes book cover image and book description from goodreads website using BeautifulSoup
 7.  goodreadsmain.oy
-    - flask app that generates a reading list given either a User ID or book title
+    - generates a reading list given either a User ID or book title in a flask app
